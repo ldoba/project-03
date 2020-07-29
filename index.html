@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+        <!--Le initial-scale=1.0 signifie au navigateur qu’il doit initialiser les dimensions en se basant sur le pixel-ratio du système, et le user-scalable=yes autorise l’utilisateur à zoomer s’il le souhaite-->
+        <script src="bootstrap/js/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-reboot.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <link href="style.css" rel="stylesheet">
+        <title>Tou'roule</title>
+    </head>
+    <body>
+        <header class="row header justify-content-md-center">
+          <img class="logo" src="images/Tou-roule-logo.png" alt="logo-tou'roule">
+        </header>
+        <div class="slider-container">
+          <div class= "slider-items">
+            <div class="item">
+              <img src="images/image-01.jpg" alt="">
+              <div class="caption">Comment réserver un vélo via l'application?</div>
+            </div>
+            <div class="item">
+              <img src="images/image-02.jpg" alt="">
+              <div class="caption">Choisissez votre station</div>
+            </div>
+            <div class="item">
+              <img src="images/image-03.jpg" alt="">
+              <div class="caption">Remplissez vos informations et cliquez sur réserver.</div>
+            </div>
+            <div class="item">
+              <img src="images/image-04.jpg" alt="">
+              <div class="caption">Signez... Ça y est ! Votre vélo est réservé pendant 20mn.</div>
+            </div>
+          </div>
+
+          <!--slide actions-->
+          <div class="prev-slide">⇦</div>
+          <div class="next-slide">⇨</div>
+          <div id="button-pause" class="pause button-pause"></div>
+
+        </div>
+
+
+
+
+        <div class="row justify-content-md-center">
+                <!-- C A R T E -->
+                    <div class="col-sm-12 col-md-6 border" id="map">
+                      Map
+                    </div>
+                <!-- D E T A I L S  D E  L A  S T A T I O N -->
+                    <section class="informations col-sm-12 col-md-6 border">
+                      <h3 class="row justify-content-md-center col-sm-6 col-md-6">
+                        Détails de la station
+                      </h3>
+                      <div class="informations-details">
+                        <p id="name-data"></p>
+                        <p class="address-data row">Adresse : <span id="address-data"></span></p>
+                        <p class="statut-data row">Statut de la station : <span id="statut-data"></span></p>
+                        <p class="velo-data row">Places : <span id="velo-data"></span></p>
+                      </div>
+                <!-- F O R M U L A I R E -->
+                <div class="row">
+                 <form class="form-group col-sm-12 col-md-6">
+                      <div class="form-info">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" class="form-control">
+                            <label for="forename">Prénom</label>
+                            <input type="text" id="forename" class="form-control">
+                      </div>
+                      <button type="submit" class="btn btn-outline-dark btn-reservation">Réserver</button>
+                    </form>      
+                </div>
+        </div>
+                    </section>
+                  </div>
+            <footer class="row alert-success warning alert justify-content-md-center footer">
+              <div class="col-sm-12 col-md-6">
+                Temps restant (chrono)
+              </div>
+            </footer>
+        </div>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+        <script src="map.js" async></script> <!--ne bloque pas l'execution de la page-->
+        <script src="slider.js" async></script> <!--ne bloque pas l'execution de la page-->
+    </body>
+</html>

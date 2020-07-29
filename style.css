@@ -1,0 +1,157 @@
+/*Général*/
+body{
+    margin: 0px;
+    background-color: #f5f2f2;
+}
+*{
+    box-sizing: border-box;
+}
+/*-----H E A D E R ------*/
+.header{
+    background-color: #a82049;
+    height: 60px;
+}
+.logo{
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/*------ S L I D E R ------*/
+
+.slider-container{
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+.slider-container .slider-items{
+    overflow: hidden;
+    /*effet défilement slider*/
+    transition: margin 1s ease;
+}
+.slider-container .item{
+    position: relative;
+    float: left;
+}
+.slider-container .item img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.slider-container .item .caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(168, 32, 73, .5);
+    color: white;
+    padding: 15px;
+}
+.slider-container .prev-slide{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color:white;
+    background-color:#a82049;
+    border-radius: 50%;
+    left: 20px;
+    top:50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
+}
+.slider-container .next-slide{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color:white;
+    background-color:#a82049;
+    border-radius: 50%;
+    right: 20px;
+    top:50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
+}
+/* Création de la commande "play / stop" */
+.button-pause {
+	position: relative;
+	top: 20px;
+	z-index: 1000;
+	cursor: pointer;
+	margin-left: 10px;
+}
+/* Bouton "Pause" */
+
+.pause::before {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 20px;
+	background-color: #fff;
+	
+}
+.pause::after {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 20px;
+	background-color: #fff;
+	left: 12px;
+}
+
+#button-pause.play::before {
+	position: absolute;
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-left: 20px solid #fff;
+	border-bottom: 12px solid transparent;
+	box-sizing: border-box;
+}
+
+/* 
+
+
+
+/*--------- D E U X I E M E  P A R T I E ----------*/
+
+
+        /* -------C A R T E-------- */
+        #map{
+            width: 100%;
+            min-height: 200px;
+        }
+
+        /*-------I N F O R M A T I O N S--------*/
+        .informations{
+            overflow: hidden;
+        }
+        .informations h3{
+            padding-top: 20px;
+            margin:auto;
+            font-size: 1.5rem;
+            color: #a82049;
+            font-style: bold;
+        }
+        .informations-details {
+            margin: 1% 3%;
+        }
+        .form-group{
+           background-color: #f5f2f2;
+        }
+        .form-info{
+            padding: 2% 5%;
+            margin:auto;
+            margin-bottom: 20px;
+        }
+        .btn-reservation{
+            margin: 1% 5%;
+        }

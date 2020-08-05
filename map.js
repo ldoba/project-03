@@ -33,9 +33,9 @@
                     const lat = stationsList[i].position.lat;
                     const lng = stationsList[i].position.lng;
                         if (available_bikes > 0 && status == 'OPEN'){
-                        var marker = L.marker([lat, lng]).addTo(this.mymap);
+                        var marker = L.marker([lat, lng],{icon: bicycleIcon}).addTo(this.mymap);
                         } else{
-                            console.log('pas de place')
+                            console.log('Pas de station disponible');
                         }
                 }
             } else{
@@ -48,3 +48,11 @@
     const mapToulouse = new Map(43.6044622, 1.4442469, document.getElementById('map'), 13);
     mapToulouse.initMap();
     mapToulouse.main();
+
+//on crée un icon vélo
+    var bicycleIcon = L.icon({
+        iconUrl: 'images/velo.png',
+        iconSize:     [50, 50], // size of the icon
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });

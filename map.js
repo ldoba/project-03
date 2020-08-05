@@ -25,17 +25,15 @@
                 var stationsList  = await response.json();
                 console.log(stationsList);
                 console.log('Retour serveur OK :', response.status);
-                console.log(stationsList.lenght);
-                for (var i = 0; i > stationsList.lenght; i++ ){
+                console.log('il y a ' + stationsList.length + ' stations dans cette ville');
+                for (var i = 0; i < stationsList.length; i++ ){
                     const address = stationsList[i].address;
                     const available_bikes = stationsList[i].available_bikes;
                     const status = stationsList[i].status;
                     const lat = stationsList[i].position.lat;
                     const lng = stationsList[i].position.lng;
-                    console.log("test log");
                         if (available_bikes > 0 && status == 'OPEN'){
-                        console.log('yo');
-                        var marker = L.marker([lat, lng]).addTo(mymap);
+                        var marker = L.marker([lat, lng]).addTo(this.mymap);
                         } else{
                             console.log('pas de place')
                         }

@@ -33,9 +33,12 @@
                     const lat = stationsList[i].position.lat;
                     const lng = stationsList[i].position.lng;
                         if (available_bikes > 0 && status == 'OPEN'){
-                        var marker = L.marker([lat, lng],{icon: bicycleIcon}).addTo(this.mymap);
+                            //si dispo marker vert
+                            var markerGreen = L.marker([lat, lng],{icon: bicycleIconGreen}).addTo(this.mymap);
                         } else{
+                            //si indispo marker rouge
                             console.log('Pas de station disponible');
+                            var markerRed = L.marker([lat, lng],{icon: bicycleIconRed}).addTo(this.mymap);
                         }
                 }
             } else{
@@ -49,10 +52,17 @@
     mapToulouse.initMap();
     mapToulouse.main();
 
-//on crée un icon vélo
-    var bicycleIcon = L.icon({
-        iconUrl: 'images/velo.png',
-        iconSize:     [50, 50], // size of the icon
+//on crée un icon vélo vert + un rouge
+    var bicycleIconGreen = L.icon({
+        iconUrl: 'images/velo-vert.png',
+        iconSize:     [30, 30], // size of the icon
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
+    var bicycleIconRed = L.icon({
+        iconUrl: 'images/velo-rouge.png',
+        iconSize:     [30, 30], // size of the icon
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+

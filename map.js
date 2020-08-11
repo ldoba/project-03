@@ -37,9 +37,16 @@
                             var markerGreen = L.marker([lat, lng],{icon: bicycleIconGreen}).addTo(this.mymap);
                         } else{
                             //si indispo marker rouge
-                            console.log('Pas de station disponible');
+                            console.log('Stations indisponibles');
                             var markerRed = L.marker([lat, lng],{icon: bicycleIconRed}).addTo(this.mymap);
                         }
+                    //On crée la fonction qui récupère les infos
+                    function getStationInformations(){
+                        document.getElementById('station-address').textContent = address;
+                        document.getElementById('station-status').textContent = status;
+                        document.getElementById('station-available_bikes').textContent = available_bikes;
+                    }
+                    markerGreen.addEventListener("click", getStationInformations);
                 }
             } else{
                 console.log('Retour serveur not OK', response.status);

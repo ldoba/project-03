@@ -44,46 +44,36 @@
           <div id="button-pause" class="pause button-pause"></div>
 
         </div>
-
-
-
-
+        
         <div class="row justify-content-md-center">
-                <!-- C A R T E -->
-                    <div class="col-sm-12 col-md-6 border" id="map">
-                      Map
-                    </div>
-                <!-- D E T A I L S  D E  L A  S T A T I O N -->
-                    <section class="informations col-sm-12 col-md-6 border">
-                      <h3 class="row justify-content-md-center col-sm-6 col-md-6">
-                        Détails de la station
-                      </h3>
-                      <div class="informations-details">
-                        <p id="name-data"></p>
-                        <p class="address-data row">Adresse :  <span id="station-address"></span></p>
-                        <p class="status-data row">Statut de la station :  <span id="station-status"></span></p>
-                        <p class="velo-data row">Places : <span id="station-available_bikes"></span></p>
-                      </div>
-                <!-- F O R M U L A I R E -->
-                <div class="row">
-                 <form class="form-group col-sm-12 col-md-6" id="booking-info">
-                      <div class="form-info">
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" class="form-control">
-                            <label for="forename">Prénom</label>
-                            <input type="text" id="forename" class="form-control">
-                      </div>
-                      <button type="submit" class="btn btn-outline-dark btn-reservation" id="booking-button">Réserver</button>
-                    </form>      
+          <!-- C A R T E -->
+          <div class="col-sm-12 col-md-6 border" id="map">Map</div>
+          <!-- D E T A I L S  D E  L A  S T A T I O N -->
+           <section class="informations col-sm-12 col-md-6 border">
+            <h3 class="row justify-content-md-center col-sm-6 col-md-6">Détails de la station</h3>
+            <div class="informations-details">
+              <p id="name-data"></p>
+              <p class="address-data row">Adresse :  <span id="station-address"></span></p>
+              <p class="status-data row">Statut de la station :  <span id="station-status"></span></p>
+              <p class="velo-data row">Places : <span id="station-available_bikes"></span></p>
+            </div>
+          <!-- F O R M U L A I R E -->
+            <div class="row">
+              <form class="form-group col-sm-12 col-md-6" id="booking-info">
+                <div class="form-info">
+                  <label for="name">Nom</label>
+                  <input type="text" id="name" class="form-control">
+                  <label for="forename">Prénom</label>
+                  <input type="text" id="forename" class="form-control">
                 </div>
+                <button type="submit" class="btn btn-outline-dark btn-reservation" id="booking-button">Réserver</button>
+              </form>
+            </div>
+          </section>
         </div>
-                    </section>
-                  </div>
-            <footer class="row alert-success warning alert justify-content-md-center footer">
-              <div class="col-sm-12 col-md-6">
-                Temps restant (chrono)
-              </div>
-            </footer>
+        <footer class="row alert-success warning alert justify-content-md-center footer">
+              <div class="col-sm-12 col-md-6">Temps restant (chrono)</div>
+        </footer>
         </div>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="

@@ -12,9 +12,9 @@
         
         initMap(){
                 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                accessToken: 'sk.eyJ1IjoibHNnc3NsbiIsImEiOiJja2NwMHJlOHQwcWRqMnJzNmd0eTVocGlrIn0.r928SiZoG7u1tzr17u6yRw',
-                maxZoom:30
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    accessToken: 'sk.eyJ1IjoibHNnc3NsbiIsImEiOiJja2NwMHJlOHQwcWRqMnJzNmd0eTVocGlrIn0.r928SiZoG7u1tzr17u6yRw',
+                    maxZoom:30
                 }).addTo(this.mymap);
             return this;
         }
@@ -80,4 +80,3 @@
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
-

@@ -32,21 +32,29 @@
                     const status = stationsList[i].status;
                     const lat = stationsList[i].position.lat;
                     const lng = stationsList[i].position.lng;
-                        if (available_bikes > 0 && status == 'OPEN'){
-                            //si dispo marker vert
-                            var markerGreen = L.marker([lat, lng],{icon: bicycleIconGreen}).addTo(this.mymap);
-                        } else{
-                            //si indispo marker rouge
-                            console.log('Stations indisponibles');
-                            var markerRed = L.marker([lat, lng],{icon: bicycleIconRed}).addTo(this.mymap);
-                        }
                     //On crée la fonction qui récupère les infos
                     function getStationInformations(){
                         document.getElementById('station-address').textContent = address;
                         document.getElementById('station-status').textContent = status;
                         document.getElementById('station-available_bikes').textContent = available_bikes;
+                        document.getElementById("booking-info").style.visibility = "visible";
                     }
-                    markerGreen.addEventListener("click", getStationInformations);
+                    function stationNotDisponible(){
+                        document.getElementById('station-address').textContent = address;
+                        document.getElementById('station-status').textContent = status;
+                        document.getElementById('station-available_bikes').textContent = available_bikes;
+                        document.getElementById("booking-info").style.visibility = "hidden";
+                    }
+                        if (available_bikes > 0 && status == 'OPEN'){
+                            //si dispo marker vert
+                            var markerGreen = L.marker([lat, lng],{icon: bicycleIconGreen}).addTo(this.mymap);
+                            markerGreen.addEventListener("click", getStationInformations);
+                        } else{
+                            //si indispo marker rouge
+                            console.log('Pas de station disponible');
+                            var markerRed = L.marker([lat, lng],{icon: bicycleIconRed}).addTo(this.mymap);
+                            markerRed.addEventListener("click", stationNotDisponible);
+                        }                    
                 }
             } else{
                 console.log('Retour serveur not OK', response.status);

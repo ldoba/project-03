@@ -155,6 +155,9 @@ body{
         .btn-reservation{
             margin: 1% 5%;
         }
+        #booking-info{
+            visibility: visible;
+        }
         .address-data, .status-data, .velo-data{
             font-weight: bold;
         }

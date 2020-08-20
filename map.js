@@ -33,13 +33,13 @@ class Map {
                 const status = stationsList[i].status;
                 const lat = stationsList[i].position.lat;
                 const lng = stationsList[i].position.lng;
-                var bicycleIconGreen = L.icon({
+                const bicycleIconGreen = L.icon({
                     iconUrl: 'images/velo-vert.png',
                     iconSize:     [30, 30], // size of the icon
                     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
                     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
                 });
-                var bicycleIconRed = L.icon({
+                const bicycleIconRed = L.icon({
                     iconUrl: 'images/velo-rouge.png',
                     iconSize:     [30, 30], // size of the icon
                     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location

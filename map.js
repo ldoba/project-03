@@ -57,6 +57,7 @@ class Map {
                     document.getElementById('station-status').textContent = status;
                     document.getElementById('station-available_bikes').textContent = available_bikes;
                     document.getElementById("booking-info").style.visibility = "hidden";
+                    document.getElementById("canvas").style.visibility = "hidden";
                 }
                 if (available_bikes > 0 && status == 'OPEN') {
                     //si dispo marker vert

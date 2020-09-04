@@ -26,7 +26,7 @@ var Canvas = {
             }
         });
 
-        document.getElementById('boum').addEventListener('click', function () {
+        document.getElementById('reset').addEventListener('click', function () {
             that.clearDraw();
         });
     },

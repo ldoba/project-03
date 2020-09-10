@@ -50,14 +50,16 @@ class Map {
                     document.getElementById('station-address').textContent = address;
                     document.getElementById('station-status').textContent = status;
                     document.getElementById('station-available_bikes').textContent = available_bikes;
-                    document.getElementById("booking-info").style.visibility = "visible";
+                    document.getElementById("form-info").style.visibility = "visible";
+                    document.getElementById("btn-booking").style.visibility = "visible";
                 }
                 function stationNotDisponible() {
                     document.getElementById('station-address').textContent = address;
                     document.getElementById('station-status').textContent = status;
                     document.getElementById('station-available_bikes').textContent = available_bikes;
-                    document.getElementById("booking-info").style.visibility = "hidden";
+                    document.getElementById("form-info").style.visibility = "hidden";
                     document.getElementById("canvas").style.visibility = "hidden";
+                    document.getElementById("btn-booking").style.visibility = "hidden";
                 }
                 if (available_bikes > 0 && status == 'OPEN') {
                     //si dispo marker vert

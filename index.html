@@ -12,6 +12,7 @@
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>
         <link href="style.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="images/velo.png"/>
         <title>Tou'roule</title>
     </head>
     <body>
@@ -60,11 +61,11 @@
           <!-- F O R M U L A I R E -->
             <div class="row">
               <form class="form-group col-sm-12 col-md-6" id="booking-info">
-                <div class="form-info">
+                <div class="form-info" id ='form-info'>
                   <label for="name">Nom</label>
-                  <input type="text" id="name" class="form-control" onfocus="checkEmpty()" onblur="checkEmpty()" onkeyup="checkEmpty()">
+                  <input type="text" id="name" class="form-control" onkeyup='javascript:isCharSet()'>
                   <label for="forename">Prénom</label>
-                  <input type="text" id="forename" class="form-control" onfocus="checkEmpty()" onblur="checkEmpty()" onkeyup="checkEmpty()">
+                  <input type="text" id="forename" class="form-control" onkeyup='javascript:isCharSet()'>
                 </div>
                 <button href="#modal1" class="btn-dark js-modal btn-reservation" id="btn-booking">Réserver</button>
               </form>
@@ -75,13 +76,13 @@
                 <h2 class="row col-md-10" id="titlemodal">Veuillez signer puis cliquer sur "Confirmer la réservation"</h2>
                 <canvas id="canvas"></canvas>
                 <button type="button" class="btn btn-light" id="reset">Clear</button>
-                <button type="button" class="btn btn-success justify-content-md-center row col-md-6 btn-reservation" id="canvasbtn">Confirmer la réservation</button>
+                <button type="button" class="btn btn-success justify-content-md-center row col-md-6 js-modal-close" id="canvasbtn">Confirmer la réservation</button>
               </div>
             </aside>
           </section>
         </div>
         <footer class="row alert-success warning alert justify-content-md-center footer">
-              <div class="col-sm-12 col-md-6">Temps restant<p id="timer"></p></div>
+              <div class="col-sm-12 col-md-6 afterBookingInfos">test<p id="timer"></p></div>
         </footer>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="

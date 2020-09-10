@@ -142,7 +142,8 @@ body{
             font-weight: bold;
         }
         .informations-details {
-            margin: 1% 3%;
+            padding: 2% 5%;
+            margin:auto;
         }
         .form-group{
            background-color: #f5f2f2;
@@ -167,7 +168,7 @@ body{
         }
 
         /*canvas*/
-        .modal1{
+        .modal{
             position: fixed;
             display: flex;
             align-items: center;
@@ -191,10 +192,12 @@ body{
         #canvas{
             height: 150px;
             width: 300px;
-            border: 3px solid black;
+            border: 1px solid black;
         }
         #reset{
             width: auto;
             height: auto;
-            color: black;
+        }
+        #titlemodal{
+            font-size: 16px;
         }

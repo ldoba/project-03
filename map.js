@@ -28,6 +28,7 @@ class Map {
             console.log('Retour serveur OK :', response.status);
             console.log('il y a ' + stationsList.length + ' stations dans cette ville');
             for (var i = 0; i < stationsList.length; i++) {
+                const name = stationsList[i].name;
                 const address = stationsList[i].address;
                 const available_bikes = stationsList[i].available_bikes;
                 const status = stationsList[i].status;
@@ -47,6 +48,7 @@ class Map {
                 });
                 //On crée la fonction qui récupère les infos
                 function getStationInformations() {
+                    document.getElementById('station-name').textContent = name;
                     document.getElementById('station-address').textContent = address;
                     document.getElementById('station-status').textContent = status;
                     document.getElementById('station-available_bikes').textContent = available_bikes;
@@ -54,6 +56,7 @@ class Map {
                     document.getElementById("btn-booking").style.visibility = "visible";
                 }
                 function stationNotDisponible() {
+                    document.getElementById('station-name').textContent = name;
                     document.getElementById('station-address').textContent = address;
                     document.getElementById('station-status').textContent = status;
                     document.getElementById('station-available_bikes').textContent = available_bikes;

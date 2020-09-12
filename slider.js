@@ -19,6 +19,10 @@ class Slider {
         this.nextSlide = this.slider.querySelector(".next-slide");
         //previous slide button
         this.prevSlide = this.slider.querySelector(".prev-slide");
+        //pause  button
+        this.pause = this.slider.querySelector(".pause");
+        //play  button
+        this.play = this.slider.querySelector(".play");
         //appel fonction next
         var that = this;
         this.nextSlide.onclick = function () {
@@ -34,9 +38,20 @@ class Slider {
         this.setWidth()
 
         //automatic slider
-        window.onload = setInterval(function () {
-            that.next()
-        }, 5000);
+        var autoslider = setInterval(function () {
+            that.next()}, 5000);
+        window.onload = autoslider;
+
+        //stop auto
+        this.pause.onclick = function() {
+            clearInterval(autoslider);
+        };
+
+        //play auto
+        this.play.onclick = function () {
+            setInterval(function () {
+                that.next()}, 5000);
+            };
     }
     //set width of all slides items
     setWidth() {

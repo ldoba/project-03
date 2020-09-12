@@ -3,8 +3,6 @@ let time = startingMinutes * 60;
 
 const countdown = document.getElementById('timer');
 
-setInterval(updateCountdown, 1000);
-
 function updateCountdown (){
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
@@ -14,3 +12,7 @@ function updateCountdown (){
     countdown.innerHTML = `${minutes} : ${seconds}`;
     time--;
 }
+document.querySelectorAll('#canvasbtn').forEach(a => {
+    a.addEventListener('click', updateCountdown);
+    setInterval(updateCountdown, 1000);
+})

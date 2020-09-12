@@ -32,6 +32,4 @@ const stopPropagation = function(e){
 document.querySelectorAll('.js-modal').forEach(a => {
     a.addEventListener('click', openModal);
 })
-document.querySelectorAll('.js-modal').forEach(a => {
-    a.addEventListener('click', openModal);
-})
+document.querySelector('#canvasbtn').addEventListener('click', closeModal);

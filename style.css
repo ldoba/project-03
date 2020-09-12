@@ -16,7 +16,6 @@ body{
     width: auto;
     display: block;
 }
-
 /*------ S L I D E R ------*/
 
 .slider-container{
@@ -79,47 +78,36 @@ body{
     cursor: pointer;
 }
 /* Création de la commande "play / stop" */
-.button-pause {
-	position: relative;
-	top: 20px;
-	z-index: 1000;
-	cursor: pointer;
-	margin-left: 10px;
+.slider-container .pause{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color:white;
+    background-color:black;
+    border-radius: 50%;
+    right: 3%;
+    bottom:7%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
 }
-/* Bouton "Pause" */
-
-.pause::before {
-	content: '';
-	position: absolute;
-	width: 5px;
-	height: 20px;
-	background-color: #fff;
-	
+.slider-container .play{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color: #a82049;
+    background-color:white;
+    border-radius: 50%;
+    right: 10%;
+    bottom:7%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
 }
-.pause::after {
-	content: '';
-	position: absolute;
-	width: 5px;
-	height: 20px;
-	background-color: #fff;
-	left: 12px;
-}
-
-#button-pause.play::before {
-	position: absolute;
-	content: '';
-	display: inline-block;
-	width: 0;
-	height: 0;
-	border-top: 12px solid transparent;
-	border-left: 20px solid #fff;
-	border-bottom: 12px solid transparent;
-	box-sizing: border-box;
-}
-
-/* 
-
-
 
 /*--------- D E U X I E M E  P A R T I E ----------*/
 
@@ -163,11 +151,11 @@ body{
         #booking-info{
             visibility: visible;
         }
-        .address-data, .status-data, .velo-data{
+        .address-data, .status-data, .velo-data, .name-data{
             font-weight: bold;
         }
 
-        #station-address, #station-available_bikes, #station-status{
+        #station-address, #station-available_bikes, #station-status, #station-name{
             font-weight: lighter;
         }
 

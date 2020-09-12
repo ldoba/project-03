@@ -18,9 +18,11 @@ function isCharSet() {
 }
 // exécuter la fonction quand le bouton 'Confirmer la réservation' est cliqué
 canvasbtn.addEventListener('click', function() {
+    const stationname = document.getElementById('station-name');
     // stocker le nom et prénom entrés dans le web storage
     localStorage.setItem('name', inputName.value);
     localStorage.setItem('forename', inputForename.value);
+    sessionStorage.setItem('stationname', stationname.value);
     // exécuter nameDisplayCheck() pour afficher les données en front
     nameDisplayCheck();
   });
@@ -37,12 +39,13 @@ forgetBtn.addEventListener('click', function() {
 function nameDisplayCheck() {
     // vérifie si les éléments 'name' et 'forename' sont stockés dans le web storage
     if(localStorage.getItem('name') && localStorage.getItem('forename')) {
-      // Si c'est le cas, affiche un accueil personnalisé
+      // Si c'est le cas, affiche un message personnalisé
       let name = localStorage.getItem('name');
       let forename = localStorage.getItem('forename');
-      afterBookingInfos.textContent = 'Vélo réservé à la station ' + 'par ' + name + ' ' + forename + ' ' + 'Temps restant : ';
+      let stationname = sessionStorage.getItem('stationname');
+      afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationname + ' par ' + name + ' ' + forename + ' ' + 'Temps restant : ';
     } else {
-      // Sinon, affiche un accueil générique
+      // Sinon, affiche une info générique
       afterBookingInfos.textContent = 'Pas de réservation en cours';
     }
   }

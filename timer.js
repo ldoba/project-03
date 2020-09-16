@@ -4,8 +4,7 @@ const canvasbtn = document.querySelector('#canvasbtn');
 const countdown = document.getElementById('timer');
 
 
-//fonction minuteur
-
+//fonction minuteur 
 function updateCountdown (){
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
@@ -21,9 +20,10 @@ function updateCountdown (){
     } else{
     }
 }
-
+//Interval pour rafraichissement chaque seconde
 var interval = setInterval(updateCountdown, 1000);
 
+//le timer est activé après avoir appuyer sur le bouton du canvas
 canvasbtn.onclick = updateCountdown();
 
 

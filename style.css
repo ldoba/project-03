@@ -93,6 +93,10 @@ body{
     line-height: 40px;
     cursor: pointer;
 }
+.slider-container .pause:active{
+    color: #a82049;
+    background-color:white;
+}
 .slider-container .play{
     position: absolute;
     height: 40px;
@@ -108,7 +112,10 @@ body{
     line-height: 40px;
     cursor: pointer;
 }
-
+.slider-container .play:active{
+    color:white;
+    background-color:black;
+}
 /*--------- D E U X I E M E  P A R T I E ----------*/
 
 
@@ -155,7 +162,7 @@ body{
             font-weight: bold;
         }
 
-        #station-address, #station-available_bikes, #station-status, #station-name{
+        #station-address, #station-available_bikes, #station-status, #name-station{
             font-weight: lighter;
         }
 

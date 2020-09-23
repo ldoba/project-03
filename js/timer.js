@@ -1,4 +1,4 @@
-const startingMinutes = 0.2;
+const startingMinutes = 20;
 let time = startingMinutes * 60;
 const canvasbtn = document.querySelector('#canvasbtn');
 const countdown = document.getElementById('timer');

@@ -20,10 +20,9 @@ function isCharSet() {
 // exécuter la fonction quand le bouton 'Confirmer la réservation' est cliqué
 canvasbtn.addEventListener('click', function() {
     // stocker le nom et prénom entrés dans le web storage
-    sessionStorage.setItem('station-name', stationName.value);
+    sessionStorage.setItem('station-name', stationName.textContent);
     localStorage.setItem('name', inputName.value);
     localStorage.setItem('forename', inputForename.value);
-    console.log(stationName.value);
      // exécuter nameDisplayCheck()
      nameDisplayCheck();
   });

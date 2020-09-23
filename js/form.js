@@ -1,5 +1,5 @@
 //création des constantes nécessaires
-const stationName = document.getElementById('station-name').textContent;
+const stationName = document.getElementById('station-name');
 const inputName = document.getElementById('name');
 const inputForename = document.getElementById('forename');
 const btnBooking = document.getElementById('btn-booking');

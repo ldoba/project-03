@@ -33,7 +33,7 @@ function nameDisplayCheck() {
     // vérifie si les éléments 'name' et 'forename' sont stockés dans le web storage
     if(localStorage.getItem('name') && localStorage.getItem('forename') && sessionStorage.getItem('station-name')) {
         // Si c'est le cas, affiche un message personnalisé
-        let stationNom = localStorage.getItem('station-name');
+        let stationNom = sessionStorage.getItem('station-name');
         let name = localStorage.getItem('name');
         let forename = localStorage.getItem('forename');
         afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationNom + ' par ' + name + ' ' + forename + ' ' + 'Temps restant : ';

@@ -14,7 +14,7 @@ function msToTime(duration) {
     milliseconds = milliseconds.toString().padStart(3, '0');
 
   //retourne les minutes + secondes (pas besoin du reste ici)
-  return "temps restant : " + minutes + "min " + seconds + "s";
+  return "Temps restant : " + minutes + "min " + seconds + "s";
 }
 
 let timer;

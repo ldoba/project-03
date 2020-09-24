@@ -1,131 +1,133 @@
-/*Général*/
-body{
-    margin: 0px;
-    background-color: #f5f2f2;
-}
-*{
-    box-sizing: border-box;
-}
+/*GENERAL*/
+
+    body{
+        margin: 0px;
+        background-color: #f5f2f2;
+    }
+    *{
+        box-sizing: border-box;
+    }
+
 /*-----H E A D E R ------*/
-.header{
-    background-color: #a82049;
-    height: 60px;
-}
-.logo{
-    height: 60px;
-    width: auto;
-    display: block;
-}
-/*------ S L I D E R ------*/
+    .header{
+        background-color: #a82049;
+        height: 60px;
+    }
+    .logo{
+        height: 60px;
+        width: auto;
+        display: block;
+    }
+/*---------------------------------------- S L I D E R ------------------------------------------------*/
 
-.slider-container{
-    max-width: 700px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-}
-.slider-container .slider-items{
-    overflow: hidden;
-    /*effet défilement slider*/
-    transition: margin 1s ease;
-}
-.slider-container .item{
-    position: relative;
-    float: left;
-}
-.slider-container .item img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.slider-container .item .caption{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(168, 32, 73, .5);
-    color: white;
-    padding: 15px;
-}
-.slider-container .prev-slide{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    color:white;
-    background-color:#a82049;
-    border-radius: 50%;
-    left: 20px;
-    top:50%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 40px;
-    cursor: pointer;
-}
-.slider-container .next-slide{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    color:white;
-    background-color:#a82049;
-    border-radius: 50%;
-    right: 20px;
-    top:50%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 40px;
-    cursor: pointer;
-}
-/* Création de la commande "play / stop" */
-.slider-container .pause{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    color:white;
-    background-color:black;
-    border-radius: 50%;
-    right: 3%;
-    bottom:7%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 40px;
-    cursor: pointer;
-}
-.slider-container .pause:active{
-    color: #a82049;
-    background-color:white;
-}
-.slider-container .play{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    color: #a82049;
-    background-color:white;
-    border-radius: 50%;
-    right: 10%;
-    bottom:7%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 40px;
-    cursor: pointer;
-}
-.slider-container .play:active{
-    color:white;
-    background-color:black;
-}
-/*--------- D E U X I E M E  P A R T I E ----------*/
+    .slider-container{
+        max-width: 700px;
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider-container .slider-items{
+        overflow: hidden;
+        /*effet défilement slider*/
+        transition: margin 1s ease;
+    }
+    .slider-container .item{
+        position: relative;
+        float: left;
+    }
+    .slider-container .item img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .slider-container .item .caption{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(168, 32, 73, .5);
+        color: white;
+        padding: 15px;
+    }
+    .slider-container .prev-slide{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        color:white;
+        background-color:#a82049;
+        border-radius: 50%;
+        left: 20px;
+        top:50%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .slider-container .next-slide{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        color:white;
+        background-color:#a82049;
+        border-radius: 50%;
+        right: 20px;
+        top:50%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    /* Création de la commande "play / stop" */
+    .slider-container .pause{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        color:white;
+        background-color:black;
+        border-radius: 50%;
+        right: 3%;
+        bottom:7%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .slider-container .pause:active{
+        color: #a82049;
+        background-color:white;
+    }
+    .slider-container .play{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        color: #a82049;
+        background-color:white;
+        border-radius: 50%;
+        right: 10%;
+        bottom:7%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .slider-container .play:active{
+        color:white;
+        background-color:black;
+    }
 
+/* ------------------C A R T E-------------------- */
+    
+    #map{
+        width: 100%;
+        min-height: 200px;
+    }
 
-        /* -------C A R T E-------- */
-        #map{
-            width: 100%;
-            min-height: 200px;
-        }
+/*-------------I N F O R M A T I O N S----------------*/
 
-        /*-------I N F O R M A T I O N S--------*/
         .informations{
             overflow: hidden;
         }
@@ -166,7 +168,8 @@ body{
             font-weight: lighter;
         }
 
-        /*canvas*/
+/*--------CANVAS + FENETRE/MODAL ---------*/
+
         .modal{
             position: fixed;
             display: flex;
@@ -199,4 +202,14 @@ body{
         }
         #titlemodal{
             font-size: 16px;
+        }
+
+/*------FOOTER------*/
+
+        .footer{
+            background-color: rgba(168, 32, 73, .2);
+            padding: 20px 0 10px 0;
+        }
+        .afterBookingInfos{
+            margin: 10px;
         }

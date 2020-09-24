@@ -51,8 +51,18 @@ class Slider {
         this.play.onclick = function () {
             setInterval(function () {
                 that.next()}, 5000);
-            };
+        };
     }
+    keyboard(e) {
+        switch (e.keyCode) {
+          case 37: // flèche gauche, image suivante
+            that.next();
+            break;
+          case 39: // flèche droite, image précédente
+            that.prev();
+            break;
+        }
+      }
     //set width of all slides items
     setWidth() {
         var totalWidth = 0;

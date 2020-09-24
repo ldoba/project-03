@@ -5,6 +5,7 @@ const inputForename = document.getElementById('forename');
 const btnBooking = document.getElementById('btn-booking');
 const btnSubmit = document.getElementById('canvasbtn');
 const afterBookingInfos = document.querySelector('.afterBookingInfos');
+
 // desactive le bouton quand le javascript se charge
 btnBooking.disabled = true;
 
@@ -15,31 +16,31 @@ function isCharSet() {
     btnBooking.disabled = false;
   } else {
     btnBooking.disabled = true;
-  }  
+  }
 }
 // exécuter la fonction quand le bouton 'Confirmer la réservation' est cliqué
-canvasbtn.addEventListener('click', function() {
-    // stocker le nom et prénom entrés dans le web storage
-    sessionStorage.setItem('station-name', stationName.textContent);
-    localStorage.setItem('name', inputName.value);
-    localStorage.setItem('forename', inputForename.value);
-     // exécuter nameDisplayCheck()
-     nameDisplayCheck();
-  });
+canvasbtn.addEventListener('click', function () {
+  // stocker le nom et prénom entrés dans le web storage
+  sessionStorage.setItem('station-name', stationName.textContent);
+  localStorage.setItem('name', inputName.value);
+  localStorage.setItem('forename', inputForename.value);
+  // exécuter nameDisplayCheck()
+  nameDisplayCheck();
+});
 
 // définit la fonction nameDisplayCheck()
 function nameDisplayCheck() {
-    // vérifie si les éléments 'name' et 'forename' sont stockés dans le web storage
-    if(localStorage.getItem('name') && localStorage.getItem('forename') && sessionStorage.getItem('station-name')) {
-        // Si c'est le cas, affiche un message personnalisé
-        let stationNom = sessionStorage.getItem('station-name');
-        let name = localStorage.getItem('name');
-        let forename = localStorage.getItem('forename');
-        afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationNom + ' par ' + name + ' ' + forename;
-    } else {
-      // Sinon, affiche une info générique
-        afterBookingInfos.textContent = 'Pas de réservation en cours';
-    }
+  // vérifie si les éléments 'name' et 'forename' sont stockés dans le web storage
+  if (localStorage.getItem('name') && localStorage.getItem('forename') && sessionStorage.getItem('station-name')) {
+    // Si c'est le cas, affiche un message personnalisé
+    let stationNom = sessionStorage.getItem('station-name');
+    let name = localStorage.getItem('name');
+    let forename = localStorage.getItem('forename');
+    afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationNom + ' par ' + name + ' ' + forename;
+  } else {
+    // Sinon, affiche une info générique
+    afterBookingInfos.textContent = 'Pas de réservation en cours';
   }
+}
 
-  document.body.onload = nameDisplayCheck;
+document.body.onload = nameDisplayCheck;

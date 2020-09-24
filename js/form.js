@@ -35,7 +35,7 @@ function nameDisplayCheck() {
         let stationNom = sessionStorage.getItem('station-name');
         let name = localStorage.getItem('name');
         let forename = localStorage.getItem('forename');
-        afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationNom + ' par ' + name + ' ' + forename + ' ' + 'Temps restant : ';
+        afterBookingInfos.textContent = 'Vélo réservé à la station ' + stationNom + ' par ' + name + ' ' + forename;
     } else {
       // Sinon, affiche une info générique
         afterBookingInfos.textContent = 'Pas de réservation en cours';

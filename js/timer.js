@@ -1,7 +1,11 @@
+//on crée nos variables const
 //Ici la réservation s'efface au bout de 20mn
 const maxTime = 20 * 1000 * 60;
-
 const out = document.querySelector("#timeleft");
+const storageTime = window.sessionStorage.getItem('timer');
+let startTime = storageTime ? +storageTime : null;
+let timer;
+
 function msToTime(duration) {
     let milliseconds = parseInt((duration % 1000));
     let seconds = Math.floor((duration / 1000) % 60);
@@ -17,7 +21,6 @@ function msToTime(duration) {
   return "Temps restant : " + minutes + "min " + seconds + "s";
 }
 
-let timer;
 function countDown() {
   const diff = Date.now() - startTime;
   const remaining = Math.max(maxTime - diff, 0);
@@ -31,11 +34,9 @@ function countDown() {
   }
 }
 
-const storageTime = window.sessionStorage.getItem('timer');
-let startTime = storageTime ? +storageTime : null;
-
 if (startTime) countDown();
 
+// si l'utilisateur fait une (nouvelle) réservation => restart le timer
 document.querySelector("#canvasbtn").addEventListener("click", function (evt) {
   evt.preventDefault();
   if (timer) window.clearTimeout(timer);

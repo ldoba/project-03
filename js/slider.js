@@ -2,7 +2,6 @@
 
 const sliderTuto = document.querySelector(".slider-container");
 
-
 //Déclaration des classes
 
 class Slider {

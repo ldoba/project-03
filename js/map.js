@@ -34,6 +34,7 @@ class Map {
                 const status = stationsList[i].status;
                 const lat = stationsList[i].position.lat;
                 const lng = stationsList[i].position.lng;
+                //Je crée les deux icons vert et rouge
                 const bicycleIconGreen = L.icon({
                     iconUrl: 'images/velo-vert.png',
                     iconSize:     [30, 30], // size of the icon

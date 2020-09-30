@@ -153,6 +153,7 @@
         }
         #btn-booking{
             visibility: hidden;
+            padding: 10px;
         }
         .btn-reservation{
             margin: 1% 5%;

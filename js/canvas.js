@@ -1,51 +1,80 @@
-var Canvas = {
-    init: function () {
+//je crée ma class signature
 
-        var that = this;
+class Signature {
+    constructor() {
+      this.initVars();
+      this.initEvents();
+    }
+  
+    initVars() {
+      this.canvas = $('#canvas')[0];
+      this.context = this.canvas.getContext("2d");
+      this.isMouseClicked = false;
+      this.isMouseInCanvas = false;
+      this.prevX = 0;
+      this.currX = 0;
+      this.prevY = 0;
+      this.currY = 0;
+    }
+  
+    initEvents() {
+      $('#canvas').on("mousemove", (e) => this.onMouseMove(e));
+      $('#canvas').on("mousedown", (e) => this.onMouseDown(e));
+      $('#canvas').on("mouseup", () => this.onMouseUp());
+      $('#canvas').on("mouseout", () => this.onMouseOut());
+      $('#canvas').on("mouseenter", (e) => this.onMouseEnter(e));
+      $('#reset').on("click", (e) => this.clearDraw());
 
-        this.canvas = document.getElementById('canvas');
-        this.context = this.canvas.getContext('2d');
-        this.paint = false;
-        window.addEventListener('mousedown', function () {
-            that.paint = true;
-        });
-        window.addEventListener('mouseup', function () {
-            that.paint = false;
-        });
-        // suivi des coordonnées au clic
-        this.canvas.addEventListener('mousedown', function (e) {
-            that.draw(e.pageX, e.pageY);
-        });
-        this.canvas.addEventListener('mouseup', function (e) {
-            that.draw(e.pageX, e.pageY);
-        });
-        //si clic gauche (mousedown) -> on dessine (draw) en fonction des coordonnées récupérées
-        this.canvas.addEventListener('mousemove', function (e) {
-            if (that.paint === true) {
-                that.draw(e.pageX, e.pageY);
-            }
-        });
-        //au clic sur le bouton on vide le canvas
-        document.getElementById('reset').addEventListener('click', function () {
-            that.clearDraw();
-        });
-    },
+    }
+    //si je clic droit
+    onMouseDown(e) {
+        this.isMouseClicked = true;
+      this.updateCurrentPosition(e);
+    }
+    // curseur levé
+    onMouseUp() {
+        this.isMouseClicked = false;
+    }
+    
+    onMouseEnter(e) {
+        this.isMouseInCanvas = true;
+      this.updateCurrentPosition(e);
+    }
 
-    draw: function (mouseX, mouseY) {
-        var cvsOffset = $(this.canvas).offset();
-
-        this.context.beginPath();
-        this.context.fillStyle = "blue";
-        this.context.arc(mouseX - cvsOffset.left, mouseY - cvsOffset.top, 1.5, 0, 2 * Math.PI);
-        this.context.fill();
+    onMouseOut() {
+        this.isMouseInCanvas = false;
+    }
+    // si je me déplace et que je clic droit alors j'actualise la position et je dessine
+    onMouseMove(e) {
+      if (this.isMouseClicked && this.isMouseInCanvas) {
+            this.updateCurrentPosition(e)
+            this.draw();
+      }
+    }
+    // je récupère la position de la souris
+    updateCurrentPosition(e) {
+        this.prevX = this.currX;
+        this.prevY = this.currY;
+        this.currX = e.clientX - this.canvas.offsetLeft;
+        this.currY = e.clientY - this.canvas.offsetTop;
+    }
+    
+    //Je trace mon dessin
+    draw() {
+        this.context.beginPath()
+        // je relie les points en fonction de leur dernière position
+        this.context.moveTo(this.prevX, this.prevY);
+        this.context.lineTo(this.currX, this.currY);
+        this.context.strokeStyle = "black";
+        this.context.lineWidth = 2;
+        this.context.stroke();
         this.context.closePath();
-    },
-
-    clearDraw: function () {
+    }
+    //vider le canvas au clic sur reset
+    clearDraw() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-};
-
-window.addEventListener('load', function () {
-    Canvas.init();
-});
+  }
+  
+  //  canvas dépend de la signature
+  var canvas = new Signature();
